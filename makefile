@@ -1,5 +1,5 @@
 
-PROG=ipodTree
+PROG=picFlow
 LIB=../g2_lib
 BASE=$(PWD)
 TRG=../njm_app_bin

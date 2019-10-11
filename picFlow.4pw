@@ -64,7 +64,7 @@
   </Settings>
   <LanguageList version="1.0"/>
   <PlatformList version="1.0"/>
-  <Group id="75644415" label="picFlow" language="Genero">
+  <Group id="75644415" label="picFlow" language="Genero" targetDirectory="$(ProjectDir)/../njm_app_bin">
     <Library binaryName="etc" id="896702986" label="etc">
       <File filePath="etc/picflow.4st"/>
     </Library>
