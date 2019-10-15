@@ -1,10 +1,8 @@
 # A picFlow Demo
-You can build using the GeneroStudio project file picFlow.4pw
 
 This demos also uses the g2_lib for the library code, so make sure to also check that out.
 
-On Linux you can use the makefile to build and run using the picFlow.4pw
-
+You can build using the GeneroStudio project file or on Linux you can use the makefile ( which will use the GeneroStudio project file )
 
 # Building:
 Set the Genero Environment then:
