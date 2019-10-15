@@ -43,13 +43,11 @@ MAIN
 	DISPLAY FORM picf
 
 	LET max_images = 50
-
-
 	CALL getImages("svg", "png")
 
 	DISPLAY "Image Found:", m_pics.getLength()
 	IF m_pics.getLength() = 0 THEN
-		CALL g2_lib.g2_winMessage("Error",SFMT("Not found any images in %s",m_base),"exclamation")
+		CALL g2_lib.g2_winMessage("Error",SFMT("Not found any images in '%1'",m_base),"exclamation")
 		EXIT PROGRAM
 	END IF
 
@@ -197,16 +195,8 @@ FUNCTION getImages(p_ext STRING, p_ext2 STRING)
 END FUNCTION
 --------------------------------------------------------------------------------
 FUNCTION checkBase(l_base STRING) RETURNS STRING
-	DEFINE l_imgPath STRING
-	DEFINE x SMALLINT
 	IF l_base IS NULL OR l_base.getLength() < 1 THEN
-		LET l_imgPath = fgl_getEnv("FGLIMAGEPATH")
-		LET x = l_imgPath.getIndexOf(os.path.pathSeparator(),1)
-		IF x > 0 THEN
-			LET l_base = l_imgPath.subString(1,x-1)
-		ELSE
-			LET l_base = l_imgPath
-		END IF
+		LET l_base = g2_lib.g2_getImagePath()
 	END IF
 	RETURN l_base
 END FUNCTION
