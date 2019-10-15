@@ -4,7 +4,8 @@ LIB=../g2_lib
 BASE=$(PWD)
 TRG=../njm_app_bin
 
-export FGLIMAGEPATH=$(BASE):$(FGLDIR)/lib/image2font.txt
+export PICS=../njm_resources/pics
+export FGLIMAGEPATH=$(PICS):$(FGLDIR)/lib/image2font.txt
 export FGLRESOURCEPATH=$(BASE)/etc
 export FGLLDPATH=$(TRG):$(GREDIR)/lib
 
@@ -17,7 +18,7 @@ update:
 	git pull
 
 run: $(TRG)/$(PROG).42r
-	cd $(TRG) && fglrun $(PROG).42r
+	cd $(TRG) && fglrun $(PROG).42r S 1
 
 clean:
 	gsmake -c $(PROG).4pw
