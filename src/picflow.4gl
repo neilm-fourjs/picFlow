@@ -48,6 +48,10 @@ MAIN
 	CALL getImages("svg", "png")
 
 	DISPLAY "Image Found:", m_pics.getLength()
+	IF m_pics.getLength() = 0 THEN
+		CALL g2_lib.g2_winMessage("Error",SFMT("Not found any images in %s",m_base),"exclamation")
+		EXIT PROGRAM
+	END IF
 
 	LET html_start = "<P ALIGN=\"CENTER\">"
 	LET html_end = "<\P>"
